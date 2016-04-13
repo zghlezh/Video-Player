@@ -1,0 +1,46 @@
+body{
+  font-size:100%;
+  font-family:YaHei,YouYuan,Serif;
+  background-color:  #78664a;
+}
+
+h1{
+  font-size: 1.5em;
+  margin: 0px 10px  0px;
+  -webkit-text-stroke: 1px black;
+  color: white;
+}
+
+.div{
+  width: 100px;
+  height: 75px;
+  font-size:0.95em;
+  font-family:YaHei,YouYuan;
+  background-color:#fff; 
+  border: 2px solid black;
+}
+.div a:hover{
+  background-color: yellow;
+  font-size: 90px;
+  
+}
+/*control the id equal "div2"*/
+#div2
+{
+  margin-left:20px;
+  margin-top:20px;
+  padding-left:20px;
+  padding-top:20px;
+  transform:rotate(30deg);
+  -ms-transform:rotate(30deg); /* IE 9 */
+  -moz-transform:rotate(30deg); /* Firefox */
+  -webkit-transform:rotate(30deg); /* Safari and Chrome */
+  -o-transform:rotate(30deg); /* Opera */
+}
+
+.demo{
+  float: right;
+   background:#FF0000;
+}
+
+

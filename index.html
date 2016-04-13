@@ -4,13 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
 
-    <title>Hello World</title>
-
-    <style>
-      body {
-        border: 1px solid black;
-      }
-    </style>
+    <title>Video Player</title>
+   
+   <link href = "css/style.css" rel = "stylesheet" type = "text/css"/>
 
     <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
          so we use a script file. -->
@@ -19,8 +15,26 @@
   </head>
 
   <body>
-    <!-- This code is in the public domain. Enjoy! -->
-    <h1>Hello World</h1>
+
+    <!-- This code is in the public domain. Enjoy!  
+  <source src = "video/movie.ogg" type="video/ogg">
+
+-->
+    <h1 id ="h1"></h1>
+    <video width = "100%" height = "30%" controls onerror="failed(event)">>
+    <source src = "video/mov_bbb.mp4" type="video/mp4">
+    
+    Your brower does not support HTML video.
+    </video>
+    
+    <div class = "div">
+      This is a Firefox video player sample!
+      <a class="lk">sssss</a>
+    </div>
+    <div style="float:left;" class = "div" id = "div2">
+     Welcome to u,My dear BriceChou!
+    </div>  
+    <a class="lk">sssss</a>
   </body>
 
 </html>
