@@ -4,20 +4,20 @@ body {
 	background-color: #78664a;
 }
 
-h1,li{
+h1{
 	font-size: 1.5em;
-	margin: 0px 10px  0px;
+	margin: 10px;
 	-webkit-text-stroke: 1px black;
 	color: white;
 }
 
-#container {
+#footer {
 	margin-bottom: 0px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-#container p {
+#footer p {
 	background-color: #524420;
 	color: #FFF;
 	margin-bottom: 0px;
@@ -40,3 +40,12 @@ div p{
 	margin-top:10px;
 	margin-bottom: 10px;
 } 
+ul li,p{
+	font-family: SimSun;
+	color: #FFF;
+	list-style-type:none;  
+  margin:0px; 
+}
+ul li:hover{
+  background-color: #524420;
+}

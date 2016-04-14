@@ -2,15 +2,30 @@ window.addEventListener("load", function ()
 {
     console.log("Video Player");
 });
-window.onload = function ()
-{
+
+$(function ()
+{   
     getCurrentTime();
-};
-//window.onload=getLocation;
-function change()
-{
-    document.getElementById("h1").innerHTML = "MPlayer";
-};
+    //when page onload and load the local JSON file
+    $.getJSON("json/list.json",function(data,status){
+        // console.log("Data: " + data + "\nStatus: " + status);
+       $("#list").append("<ul id = \"playList\"><h1>播放列表</h1></ul>");
+       $.each(data.list,function(i,item){
+           $("#playList").append("<a id= \""+item.name+"\" onclick = \"play(this);\"><li>"+(i+1)+". "+item.video_name+"</li></a>");
+           //record the src URL via input value
+           // $("#playList").append("<input id= \"i"+item.name+jsonStr(item.type,item.src));
+          // console.log("<input id= \"i"+item.name+jsonStr(item.type,item.src));
+           $("#playList").append("<input id= \"i"+item.name+"\" value =\""+item.src+";"+item.type+"\" hidden/>");
+       });
+      });  
+});
+
+/*package the JSON type data
+function jsonStr(type,src){
+    return ("\" value =\"{\"type\":\""+type+"\",\"src\":\""+src+"\"}\" hidden/>");
+}*/
+
+//show the infomation about unable to load the video  
 function failed(e) 
 {
     // video playback failed - show a message saying why
@@ -32,37 +47,52 @@ function failed(e)
             alert('An unknown error occurred.');
             break;
     }
+    list();
 };
 
+//switch the play list action and video play action 
 function list(){
   if($("#list").is(":hidden")){
-      $.get("json/list.json",function(data,status){
-       console.log("Data: " + data + "\nStatus: " + status);
-       console.log(data[0].getString());
-      });  
-      
-      
-      $("#video").hide(500);
+        $("#video").hide(500);
         $("#list").show();
-        
     }
     else { 
         $("#list").hide();
         $("#video").show();}
 }
 
+
+//play the selected video   
+function play(e){
+    var id = e.id;
+    var arr = byId("i"+id).value.split(";");
+   
+     //  var jsonObj = JSON.parse(jsonStr);
+    $("#list").hide();
+    $("#video").show();
+    
+    //config the video tag property
+    $("#video").attr({
+        "src":arr[0],
+        "controls":true,
+        "loop":false,
+        "autoplay":true,
+        "type":arr[1]
+    });
+}
+
+// get the current time
 function getCurrentTime()
 {
     /*  var ajax = ajaxObject();
     ajax.open("GET", "http://www.timeapi.org/utc/now", false); 
     ajax.setRequestHeader( "Content-Type" , "application/x-www-form-urlencoded" );
     ajax.send(); 
-    alert("1111111111");
     */
     $.get("http://www.timeapi.org/utc/now", function (result, status)
     {
         alert("Data: " + data + "\nStatus: " + status);
-        var date = new Date(result[0]);
+        var date = new Date(result);
         console.log(result);
         var year = date.getFullYear();
         var month = date.getMonth() + 1;
@@ -74,4 +104,13 @@ function getCurrentTime()
         console.log("time: " + time);
         $("#time").html(time);
     });
+}
+
+
+
+
+// find HTML object by id
+function byId(val){
+  var object = document.getElementById(val);
+  return(object);
 }

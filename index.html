@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
     
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"
-        />
-        <title>
-            Video Player
-        </title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
-        <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
-        so we use a script file. -->
-        <script src="app.js" defer>
-        </script>
-        <script src="js/jquery.js">
-        </script>
-        <!-- <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script> -->
-    </head>
+    <title> Video Player</title>
     
-    <body>
-        <!-- This code is in the public domain. Enjoy! <source src=" video/movie.ogg"
-        type="video/ogg">
-        -->
-        <div style="float:left;">
-            <h1 id="h1">
-                MPlayer
-            </h1>
-        </div>
-        <div style="float:right;">
-            <a>
-                <button onclick="list();">
-                    列表/视频
-                </button>
-            </a>
-        </div>
-        <div id="list" hidden>
-            <ul>
-                <li>brownbear</li>
-                <li>bunnytrailer</li>
-            </ul>
-        </div>
-        <div id="video">
-            <video width="100%" height="30%" onerror="failed(event)">
-                <source src="video/sintel.mp4" type="video/mp4">
-                </source>
-                Your brower does not support HTML video.
-            </video>
-        </div>
-        <div>
-            <p>
-                This is a Firefox video player sample!
-            </p>
-            <p>
-                Welcome to u,my dear BriceChou!
-            </p>
-        </div>
-        <div id="container">
-            <p>
-                显示当前时间:
-            </p>
-            <p id="time">
-            </p>
-        </div>
-    </body>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+    so we use a script file. -->
+    <script src="app.js" defer></script>
+    <script src="control.js" defer></script>
+    <script src="js/jquery.js"></script>
+   <script src="js/json.js"></script>
+   <!--  <script src="map.collection.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/utilTools.js"> </script>
+ 
+    <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script> -->
+  </head>
+  
+  <body>
+     
+    <!-- index page title-->
+    <div id="title">
+        <h1 style="float:left;" id="h1">MPlayer</h1>
+        <a style="float:right;" ><button onclick="list();">列表/视频</button> </a>
+    </div>
+    
+     <!--video play list area -->
+    <div id="list" hidden></div>
+    
+     <!--video introduction area -->
+    <div id="content">
+      <p> This is a Firefox video player sample! </p>
+      <p> Welcome to u,my dear BriceChou!</p>
+    </div>
+    
+    <!--video player area -->
+    <div id="videoArea">
+      <video id="video" width="100%" height="30%" onerror="failed(event)">
+        <source src="video/sintel.mp4" type="video/mp4"></source> 
+        Your brower does not support HTML video.</video>
+    </div>
+  
+    <!--contol the video button area -->
+    <div id="contol">
+      <button>播放/暂停</button>
+      <button>停止</button>
+      <button>重新加载</button>
+      <button>快进10S</button>
+      <button>快退10S</button>
+      <button>加速2倍播放</button>
+      <button>减速2倍播放</button>
+      <button>音量增加</button>
+      <button>音量减少</button>
+      <button>静音</button>
+    </div>
+  
+    <!--footer area -->
+    <div id="footer">
+      <p> 显示当前时间:</p>
+      <p id="time"></p>
+    </div>
+  </body>
 
 </html>
