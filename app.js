@@ -1,7 +1,3 @@
-window.addEventListener("load", function () 
-{
-    console.log("Video Player");
-});
 
 $(function ()
 {   
@@ -68,14 +64,15 @@ function play(e){
     var arr = byId("i"+id).value.split(";");
    
      //  var jsonObj = JSON.parse(jsonStr);
+    $("#h1").html(id);
     $("#list").hide();
     $("#video").show();
     
     //config the video tag property
     $("#video").attr({
         "src":arr[0],
-        "controls":true,
-        "loop":false,
+        "controls":false,
+        "loop":true,
         "autoplay":true,
         "type":arr[1]
     });
