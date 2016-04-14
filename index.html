@@ -1,40 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
-
-    <title>Video Player</title>
-   
-   <link href = "css/style.css" rel = "stylesheet" type = "text/css"/>
-
-    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
-         so we use a script file. -->
-    <script src="app.js" defer></script>
-
-  </head>
-
-  <body>
-
-    <!-- This code is in the public domain. Enjoy!  
-  <source src = "video/movie.ogg" type="video/ogg">
-
--->
-    <h1 id ="h1"></h1>
-    <video width = "100%" height = "30%" controls onerror="failed(event)">>
-    <source src = "video/sintel.mp4" type="video/mp4">
     
-    Your brower does not support HTML video.
-    </video>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"
+        />
+        <title>
+            Video Player
+        </title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+        so we use a script file. -->
+        <script src="app.js" defer>
+        </script>
+        <script src="js/jquery.js">
+        </script>
+        <!-- <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script> -->
+    </head>
     
-    <div class = "div">
-      This is a Firefox video player sample!
-      <a class="lk">sssss</a>
-    </div>
-    <div style="float:left;" class = "div" id = "div2">
-     Welcome to u,My dear BriceChou!
-    </div>  
-    <a class="lk">sssss</a>
-  </body>
+    <body>
+        <!-- This code is in the public domain. Enjoy! <source src=" video/movie.ogg"
+        type="video/ogg">
+        -->
+        <div style="float:left;">
+            <h1 id="h1">
+                MPlayer
+            </h1>
+        </div>
+        <div style="float:right;">
+            <a>
+                <button onclick="list();">
+                    列表/视频
+                </button>
+            </a>
+        </div>
+        <div id="list" hidden>
+            <ul>
+                <li>brownbear</li>
+                <li>bunnytrailer</li>
+            </ul>
+        </div>
+        <div id="video">
+            <video width="100%" height="30%" onerror="failed(event)">
+                <source src="video/sintel.mp4" type="video/mp4">
+                </source>
+                Your brower does not support HTML video.
+            </video>
+        </div>
+        <div>
+            <p>
+                This is a Firefox video player sample!
+            </p>
+            <p>
+                Welcome to u,my dear BriceChou!
+            </p>
+        </div>
+        <div id="container">
+            <p>
+                显示当前时间:
+            </p>
+            <p id="time">
+            </p>
+        </div>
+    </body>
 
 </html>
