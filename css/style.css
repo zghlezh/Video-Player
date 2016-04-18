@@ -1,53 +1,58 @@
-body{
-  margin:0px;
-  padding-right:2px; 
+body {
+	margin: 0px;
+	padding-right: 2px;
 	font-size: 100%;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	background-color: #78664a;
-  	height:100%;
-  	width:320px;
-   overflow-x: scroll;
+	height: 100%;
+	width: 320px;
+	overflow-x: scroll;
 }
-#h1{
-	float:left;
+
+#h1 {
+	float: left;
 	font-size: 1.5em;
 	color: white;
-  	margin-top:0px;
-    margin-bottom:0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
+
 #title {
-  	height:50px;
-    padding-top:5px;
-}
-#title button{
- 	 float:right;
-   margin-top:10px;
-   margin-right: 12px;
- 	 padding:0px
+	height: 50px;
+	padding-top: 5px;
 }
 
-#content{
-   color:DarkSeaGreen  ;
-   display:inline;
-   text-indent:1em; 
-}
-p{	
-    padding:0px;
-  	margin:0px;		
+#title button {
+	float: right;
+	margin-top: 10px;
+	margin-right: 12px;
+	padding: 0px
 }
 
-#control{
-  padding:0px;
-  
-}
-#control button{
-  margin:0px;
-}
-#control button:hover{
-  border:#FFF 2px solid ;
+#content {
+	color: DarkSeaGreen;
+	display: inline;
+	text-indent: 1em;
 }
 
-#footer{
+p {
+	padding: 0px;
+	margin: 0px;
+}
+
+#control {
+	padding: 0px;
+}
+
+#control button {
+	margin: 0px;
+}
+
+#control button:hover {
+	border: #FFF 2px solid;
+}
+
+#footer {
 	background-color: #524420;
 	color: #FFF;
 	margin-bottom: 0px;
@@ -55,21 +60,22 @@ p{
 	text-align: center;
 }
 
-#list{
-  margin:0 auto;
+#list {
+	margin: 0 auto;
 }
 
-ul{
-  margin-top:0px;
-  color:white;
+ul {
+	margin-top: 0px;
+	color: white;
 }
 
-ul li{
-  	margin-top:10px;	
-  	display:block;
-	  list-style-type: none;
+ul li {
+	margin-top: 10px;
+	display: block;
+	list-style-type: none;
 }
-ul li:hover{
-	background: #988558 ;
+
+ul li:hover {
+	background: #988558;
 }
 
