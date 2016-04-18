@@ -1,18 +1,18 @@
 
 $(function ()
-{   
+{  
     getCurrentTime();
     //when page onload and load the local JSON file
     $.getJSON("json/list.json",function(data,status){
         // console.log("Data: " + data + "\nStatus: " + status);
-       $("#list").append("<ul id = \"playList\"><h1>播放列表</h1></ul>");
+       $("#list").append("<ul id = \"playList\"><h1>Play List</h1></ul>");
        $.each(data.list,function(i,item){
            $("#playList").append("<a id= \""+item.name+"\" onclick = \"play(this);\"><li>"+(i+1)+". "+item.video_name+"</li></a>");
            //record the src URL via input value
            // $("#playList").append("<input id= \"i"+item.name+jsonStr(item.type,item.src));
           // console.log("<input id= \"i"+item.name+jsonStr(item.type,item.src));
            $("#playList").append("<input id= \"i"+item.name+"\" value =\""+item.src+";"+item.type+"\" hidden/>");
-       });
+          });
       });  
 });
 
@@ -51,6 +51,10 @@ function list(){
   if($("#list").is(":hidden")){
         $("#video").hide(500);
         $("#list").show();
+          //奇数行
+        //  $("ul li:odd").css({ "background-color":"#c3bbb9"});	
+          //偶数行
+        // $("ul li:even").css({"background-color":"#f7f6f6"});
     }
     else { 
         $("#list").hide();
@@ -61,7 +65,7 @@ function list(){
 //play the selected video   
 function play(e){
     var id = e.id;
-    var arr = byId("i"+id).value.split(";");
+    var arr = byId("i"+id   ).value.split(";");
    
      //  var jsonObj = JSON.parse(jsonStr);
     $("#h1").html(id);

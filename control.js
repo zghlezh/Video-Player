@@ -6,51 +6,80 @@ window.addEventListener("load", function ()
 });
 
 $(function(){
-   
-    
-      var video = byId("video");
   //play the video ro pause the video
   $("#playOrPause").click(function(){
-    console.log(video.paused);
-     if(video.paused){
-         video.play();
-     }
-    else video.pause();
+      var video = byId("video");
+     if(video.paused){video.play();}
+     else video.pause();
   });
   
   //stop the video 
   $("#stop").click(function(){
-    $("#video").load();
+     var video = byId("video");
+    video.load();
+    video.pause();
   });
+  //reload the video 
+  $("#reload").click(function(){
+     var video = byId("video");
+    video.load();
+    video.play();
+  });
+  
   //fast forward
     $("#ffd").click(function(){
-         var currentTime = (byId("video").currentTime); 
-         var  duration = (byId("video").duration); 
+         var video = byId("video"); 
+         var currentTime = video.currentTime; 
+         var duration = video.duration; 
          var ffd = duration - 5;
-        console.log(currentTime);
          if (currentTime >  ffd || currentTime == ffd){
-            currentTime = duration; 
-            console.log(currentTime);
+           video.currentTime = ffd; 
+            console.log("ffd:"+ffd+",currentTime:"+currentTime);
          }
          else{
-           currentTime = currentTime + 5;
-           console.log(currentTime);
+            video.currentTime += 5;
+            console.log("ffd:"+ffd+",currentTime:"+currentTime);
          }
  });
   //fast backward
     $("#fbd").click(function(){
+       var video = byId("video");
         var currentTime = video.currentTime;
-      console.log(currentTime);
-       currentTime -= 5;
+        video.currentTime -= 5;
        console.log(currentTime);
  });
-  //mute
+  //video mute
     $("#mute").click(function(){   
-     video.muted = true;
+       var video = byId("video");
+       if(video.muted){video.muted = false;}
+      else video.muted = true;
  });
+   //increase video volume 
+    $("#increaseVol").click(function(){  
+       var video = byId("video");
+      if(video.volume < 1){  video.volume += 0.2;}
+ });
+   //decrease video volume
+     $("#decreaseVol").click(function(){  
+     var video = byId("video");
+      var volume = new Number(video.volume);
+      var vol = volume.toFixed(2)-0.2;
+      if( vol> 0|| vol == 0){  video.volume = vol;}
+ });
+  
+    //speed to play video
+    $("#speedRate").click(function(){  
+       var video = byId("video");
+       video.playbackRate += 0.2;
+ });
+  
+    //decelerate to play video  
+    $("#decelerateRate").click(function(){  
+       var video = byId("video");
+       video.playbackRate -= 0.2;
+ });
+  
 
-  
-  
 });
 
 

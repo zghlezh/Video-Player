@@ -1,58 +1,75 @@
-body {
+body{
+  margin:0px;
+  padding-right:2px; 
 	font-size: 100%;
-	font-family: YaHei,YouYuan,Serif;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	background-color: #78664a;
+  	height:100%;
+  	width:320px;
+   overflow-x: scroll;
 }
-
-#titile{
-	margin-bottom: 10px;
-}
-h1{
+#h1{
+	float:left;
 	font-size: 1.5em;
-	margin: 10px;
-	-webkit-text-stroke: 1px black;
 	color: white;
+  	margin-top:0px;
+    margin-bottom:0px;
+}
+#title {
+  	height:50px;
+    padding-top:5px;
+}
+#title button{
+ 	 float:right;
+   margin-top:10px;
+   margin-right: 12px;
+ 	 padding:0px
 }
 
-#content {
-	  margin-top: 20px;
-	
-		padding: 10px,0,10,0;
+#content{
+   color:DarkSeaGreen  ;
+   display:inline;
+   text-indent:1em; 
+}
+p{	
+    padding:0px;
+  	margin:0px;		
 }
 
-#content p {
-	  
+#control{
+  padding:0px;
+  
+}
+#control button{
+  margin:0px;
+}
+#control button:hover{
+  border:#FFF 2px solid ;
 }
 
-#footer {
-	margin-bottom: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-#footer p {
+#footer{
 	background-color: #524420;
 	color: #FFF;
 	margin-bottom: 0px;
 	padding-top: 10px;
-	padding-bottom: 10px;
-	float: center;
 	text-align: center;
-	clear: both;
 }
 
-#time:hover {
-	background-color: #30431f;
+#list{
+  margin:0 auto;
 }
 
 ul{
-	margin:0px;  
+  margin-top:0px;
+  color:white;
 }
+
 ul li{
-	list-style-type: none;
-	list-style-image: url(icons/icon16x16.png);  
+  	margin-top:10px;	
+  	display:block;
+	  list-style-type: none;
 }
 ul li:hover{
-	  background: #FFF;
+	background: #988558 ;
 }
 
