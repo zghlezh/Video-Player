@@ -71,7 +71,7 @@ function play(e){
     //config the video tag property
     $("#video").attr({
         "src":arr[0],
-        "controls":false,
+        "controls":true,
         "loop":true,
         "autoplay":true,
         "type":arr[1]
