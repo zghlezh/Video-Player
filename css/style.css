@@ -4,6 +4,9 @@ body {
 	background-color: #78664a;
 }
 
+#titile{
+	margin-bottom: 10px;
+}
 h1{
 	font-size: 1.5em;
 	margin: 10px;
@@ -12,9 +15,13 @@ h1{
 }
 
 #content {
-	  margin:20px,0,10px;
+	  margin-top: 20px;
+	
 		padding: 10px,0,10,0;
-		
+}
+
+#content p {
+	  
 }
 
 #footer {
@@ -38,4 +45,14 @@ h1{
 	background-color: #30431f;
 }
 
+ul{
+	margin:0px;  
+}
+ul li{
+	list-style-type: none;
+	list-style-image: url(icons/icon16x16.png);  
+}
+ul li:hover{
+	  background: #FFF;
+}
 
