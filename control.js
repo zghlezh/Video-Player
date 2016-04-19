@@ -1,10 +1,4 @@
 
-
-window.addEventListener("load", function () 
-{
-    
-});
-
 $(function(){
   //play the video ro pause the video
   $("#playOrPause").click(function(){
@@ -34,11 +28,9 @@ $(function(){
          var ffd = duration - 5;
          if (currentTime >  ffd || currentTime == ffd){
            video.currentTime = ffd; 
-            console.log("ffd:"+ffd+",currentTime:"+currentTime);
          }
          else{
             video.currentTime += 5;
-            console.log("ffd:"+ffd+",currentTime:"+currentTime);
          }
  });
   //fast backward

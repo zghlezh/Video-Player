@@ -1,6 +1,18 @@
 
+window.addEventListener("load", function () 
+{
+    var width=document.documentElement.clientWidth ;//可见区域宽度
+    var height=document.documentElement.clientHeight;//可见区域高度
+    $("body").css({"width":width,
+                   "height":height,
+                   "overflow-x":"hidden",
+                  });
+    $("body").attr({"scroll":"no"});
+});
+
 $(function ()
 {  
+    
     getCurrentTime();
     //when page onload and load the local JSON file
     $.getJSON("json/list.json",function(data,status){
@@ -90,8 +102,10 @@ function getCurrentTime()
     ajax.setRequestHeader( "Content-Type" , "application/x-www-form-urlencoded" );
     ajax.send(); 
     */
-    $.get("http://www.timeapi.org/utc/now", function (result, status)
+    
+    $.getJSON("http://www.timeapi.org/utc/now", function (result, status)
     {
+        console.log("Data: " + data + "\nStatus: " + status);
         alert("Data: " + data + "\nStatus: " + status);
         var date = new Date(result);
         console.log(result);
@@ -104,7 +118,7 @@ function getCurrentTime()
         var time = year + "-" + month + "-" + date1 + " " + hour + ":" + minutes + ":" + second;
         console.log("time: " + time);
         $("#time").html(time);
-    });
+    },"html");
 }
 
 
